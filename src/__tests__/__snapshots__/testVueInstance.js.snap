@@ -163,5 +163,9 @@ exports[`Component renders correctly 1`] = `
       </a>
     </li>
   </ul>
+   
+  <button>
+    click count = 0
+  </button>
 </div>
 `;

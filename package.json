@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "serve": "vue-cli-service serve --disableHostCheck=true",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "test": "jest"
@@ -29,10 +29,11 @@
     "vue-template-compiler": "^2.5.21"
   },
   "jest": {
-
     "collectCoverage": true,
-    "collectCoverageFrom": ["**/*.{js,vue}", "!**/node_modules/**"],
-
+    "collectCoverageFrom": [
+      "**/*.{js,vue}",
+      "!**/node_modules/**"
+    ],
     "moduleFileExtensions": [
       "js",
       "json",

@@ -3,17 +3,17 @@ import HelloWorld from '../components/HelloWorld.vue'
 
 describe('Component', () => {
     const wrapper = mount(HelloWorld)
-    test('is a Vue instance', () => {
+    it('is a Vue instance', () => {
 
         expect(wrapper.isVueInstance()).toBeTruthy()
     })
 
-    test('renders correctly', () => {
+    it('renders correctly', () => {
         expect(wrapper.element).toMatchSnapshot()
     })
 
     it('has a button', () => {
-        expect(wrapper.contains('button')).toBe(false)
+        expect(wrapper.contains('button')).toBe(true)
     })
 
     it('change props test', () => {
@@ -22,6 +22,12 @@ describe('Component', () => {
         })
         expect(wrapper.html()).toContain('test set props msg')
         // expect(wrapper.html()).contains('test set props msg').toBe(true)
+    })
+    it('button click',() => {
+        expect(wrapper.vm.clickCount).toBe(0)
+        const button = wrapper.find('button')
+        button.trigger('click')
+        expect(wrapper.vm.clickCount).toBe(1)
     })
 });
 

@@ -27,6 +27,8 @@
       <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
     </ul>
+
+    <button @click="onClick">{{'click count = ' + clickCount}}</button>
   </div>
 </template>
 
@@ -35,6 +37,17 @@ export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  data:function () {
+    console.log(process.env)
+    return {
+      clickCount: 0,
+    }
+  },
+  methods:{
+    onClick: function() {
+      this.clickCount++
+    }
   }
 }
 </script>
